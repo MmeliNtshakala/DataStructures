@@ -11,22 +11,28 @@ class MyTestCase(unittest.TestCase):
     def test_find_min(self):
         self.assertEqual(find_min([26, 58, 52, 14]), 14)
         self.assertEqual(find_min([15]), 15)
+    def test_special_characters(self):
+        input_list = ['!', '@', '#', '1', '2', '3', '$', '%', '^']
+        result_alphabets, result_numbers = process_characters(input_list)
+        self.assertEqual(result_alphabets, [])
+        self.assertEqual(result_numbers, [1, 2, 3])
+        
         self.assertEqual(find_min([19, 18, 24]), 18)
 
     def test_find_average(self):
         self.assertEqual(find_average([5, 10, 15, 10]), 10)
         self.assertEqual(find_average([5, 15]), 10)
-        self.asserEqual(find_average([5]), 5)
+        self.assertEqual(find_average([5]), 5)
 
     def test_find_all_even_numbers(self):
         self.assertEqual(find_even_numbers([1, 2, 3, 4, 5, 6]), (2, 4, 6))
         self.assertEqual(find_even_numbers([10, 9, 8, 7, 6, 5]), (10, 8, 6))
-        self.assertEqual(find_even_numbers([1, 53, 51]), [])
+        self.assertEqual(find_even_numbers([1, 53, 51]), ())
 
     def test_find_all_odd_numbers(self):
         self.assertEqual(find_odd_numbers([1, 2, 3, 4, 5]), (1, 3, 5))
-        self.assertEual(find_odd_numbers([2, 4, 6, 8,]), [])
-        sel.asserEqual(find_odd_numbers([3]), 3)
+        self.assertEqual(find_odd_numbers([2, 4, 6, 8]), ())
+        self.assertEqual(find_odd_numbers([3, 2]), 3)
 
     def test_find_total_number_of_even_numbers(self):
         self.assertEqual(find_number_of_even_numbers([1, 2, 3, 4, 5]), 2)
@@ -75,6 +81,7 @@ class MyTestCase(unittest.TestCase):
         result_alphabets, result_numbers = process_characters(input_list)
         self.assertEqual(result_alphabets, [])
         self.assertEqual(result_numbers, [1, 2, 3])
+        
 
     def test_more_special_characters(self):
         input_list = ['%', '&', '*', '4', '6', '8', '(', ')', '!', 'x']
