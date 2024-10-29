@@ -25,13 +25,19 @@ class MyTestCase(unittest.TestCase):
 
     def test_find_all_odd_numbers(self):
         self.assertEqual(find_odd_numbers([1, 2, 3, 4, 5]), (1, 3, 5))
+        self.assertEual(find_odd_numbers([2, 4, 6, 8,]), [])
+        sel.asserEqual(find_odd_numbers([3]), 3)
 
     def test_find_total_number_of_even_numbers(self):
         self.assertEqual(find_number_of_even_numbers([1, 2, 3, 4, 5]), 2)
+        self.assertEqual(find_number_of_even_numbers([1, 3, 5]), 0)
+        self.assertEqual(find_number_of_even_numbers([2, 4, 6, 5, 2]), 4)
 
     def test_find_total_number_of_odd_numbers(self):
         self.assertEqual(find_number_of_odd_numbers([1, 2, 3, 4, 5]), 3)
-
+        self.assertEqual(find_number_of_odd_numbers([12, 2, 14, 4, 2]), 0)
+        self.assertEqual(find_number_of_odd_numbers([7, 5, 3, 4, 7]), 4)
+        
     def test_return_list_stats(self):
         input_list = [1, 2, 3, 4, 5]
         expected_output = {
